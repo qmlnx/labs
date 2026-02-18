@@ -96,10 +96,91 @@ void exercise4()
 int main()
 {
     cout << "ЛАБОРАТОРНАЯ РАБОТА №8" << endl;
-    cout << "======================" << endl;
-    
+
     exercise2();
     exercise4();
     
     return 0;
+}
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+//УПРАЖНЕНИЕ 3
+//ЧАСТЬ 1: 4 варианта заполнения массива
+
+// Вариант 1: статический массив, индексная адресация
+void variant1() {
+    cout << "\n--- ВАРИАНТ 1: Статический массив, индексы ---" << endl;
+    const int SIZE = 10;
+    int arr[SIZE];
+    
+    // Заполнение (индексная адресация)
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = i * i;
+    }
+    
+    // Вывод (индексная адресация)
+    for (int i = 0; i < SIZE; i++) {
+        cout << "arr[" << i << "] = " << arr[i] << endl;
+    }
+}
+
+// Вариант 2: статический массив, адресация через указатель
+void variant2() {
+    cout << "\n--- ВАРИАНТ 2: Статический массив, указатели ---" << endl;
+    const int SIZE = 10;
+    int arr[SIZE];
+    int* ptr = arr;
+    
+    // Заполнение (косвенная адресация)
+    for (int i = 0; i < SIZE; i++) {
+        *(ptr + i) = i * i;
+    }
+    
+    // Вывод (косвенная адресация)
+    for (int i = 0; i < SIZE; i++) {
+        cout << "arr[" << i << "] = " << *(ptr + i) << endl;
+    }
+}
+
+// Вариант 3: динамический массив, индексная адресация
+void variant3() {
+    cout << "\n--- ВАРИАНТ 3: Динамический массив, индексы ---" << endl;
+    const int SIZE = 10;
+    int* arr = new int[SIZE];
+    
+    // Заполнение (индексная адресация)
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = i * i;
+    }
+    
+    // Вывод (индексная адресация)
+    for (int i = 0; i < SIZE; i++) {
+        cout << "arr[" << i << "] = " << arr[i] << endl;
+    }
+    
+    delete[] arr;
+}
+
+// Вариант 4: динамический массив, адресация через указатель
+void variant4() {
+    cout << "\n--- ВАРИАНТ 4: Динамический массив, указатели ---" << endl;
+    const int SIZE = 10;
+    int* arr = new int[SIZE];
+    int* ptr = arr;
+    
+    // Заполнение (косвенная адресация)
+    for (int i = 0; i < SIZE; i++) {
+        *(ptr + i) = i * i;
+    }
+    
+    // Вывод (косвенная адресация)
+    for (int i = 0; i < SIZE; i++) {
+        cout << "arr[" << i << "] = " << *(ptr + i) << endl;
+    }
+    
+    delete[] arr;
 }
