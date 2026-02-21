@@ -6,8 +6,8 @@ using namespace std;
 // УПРАЖНЕНИЕ 2
 void modifyValues(int& refArg, int* ptrArg)
 {
-    refArg = 100;
-    *ptrArg = 200;
+    refArg = 100; //сслыка
+    *ptrArg = 200; //указатель
 }
 
 void exercise2()
@@ -48,7 +48,7 @@ public:
         }
     }
     
-    void append(int value) {
+    void append(int value) { //выделяем память
         Node* newNode = new Node(value);
         
         if (head == nullptr) {
@@ -122,7 +122,7 @@ void variant2() {
     int* ptr = arr;
     
     for (int i = 0; i < SIZE; i++) {
-        *(ptr + i) = i * i;
+        *(ptr + i) = i * i;  //сдвиг  на i вперед
     }
     
     for (int i = 0; i < SIZE; i++) {
