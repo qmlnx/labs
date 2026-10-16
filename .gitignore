@@ -3,3 +3,9 @@
 main
 *.o
 *.exe
+
+# Артефакты компиляции
+program
+*.dSYM/
+*.o
+*.out
